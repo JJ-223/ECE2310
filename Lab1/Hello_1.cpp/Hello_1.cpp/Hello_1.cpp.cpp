@@ -1,5 +1,6 @@
-// Hello_1.cpp.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/***
+* {Practicing Github functions with simple program}
+***/
 
 #include <iostream>
 #include <cstdlib>
