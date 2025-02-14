@@ -19,7 +19,6 @@ void incArrBy10(int* arr, int size) {
 
 int main()
 {
-
     const int SIZE = 5;
     int arr[SIZE];
 
