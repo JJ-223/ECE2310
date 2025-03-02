@@ -19,6 +19,7 @@ RPG::RPG(string name, int health, int strength, int defense, string type, string
 	this->strength = strength;
 	this->defense = defense;
 	this->type = type;
+	skills = new string[SKILL_SIZE];
 
 	setSkills();
 }
@@ -43,9 +44,9 @@ void RPG::setSkills() {
 	
 }
 
-void RPG::printAction(string, RPG) {
+/*void RPG::printAction(string, RPG) {
 	printf("%s used %s on %s\n", name.c_str(), skills.c_str(), opponent.getName().c_str());
-}
+}*/
 
 void RPG::updateHealth(int new_health){
 	health = new_health;

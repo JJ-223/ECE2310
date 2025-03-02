@@ -9,7 +9,8 @@ int main() {
 	player1.printAll();
 	cout << endl;
 
-	RPG player2("Icecream", 95, 15, 7, "mage");
+	string skills[] = { "water", "fire" };
+	RPG player2("Icecream", 95, 15, 7, "mage", skills);
 	cout << "Player2 (Overloaded Constructor) Details: \n";
 	player2.printAll();
 	cout << endl;
@@ -17,7 +18,13 @@ int main() {
 	cout << "Testing accessor functions: \n" << endl;
 	player2.updateHealth(80);
 	cout << "Player2 after updates: \n" << endl;
-	cout << player2.isAlive() << endl;
+	cout << "Player2.isAlive: ";
+
+	if (player2.isAlive())
+		cout << "Yes" << endl;
+	else
+		cout << "No" << endl;
+
 	player2.printAll();
 	cout << endl;
 
