@@ -56,6 +56,8 @@ void RPG::updateHealth(int new_health) {
 void RPG::attack(RPG* opponent) {
 	int dmg = strength - opponent->defense;
 	int new_health = opponent->health - abs(dmg);
+	if (new_health < 0)
+		new_health = 0;
 	(*opponent).updateHealth(new_health);
 }
 
