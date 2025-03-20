@@ -18,8 +18,8 @@ public:
 	void setSkills();
 	void printAction(string, RPG);
 	void updateHealth(int);
-	//void attack(RPG*);
-	//void useSkill(RPG*);
+	void attack(RPG*);
+	void useSkill(RPG*);
 
 	bool isAlive() const;
 	string getName() const;
@@ -27,7 +27,6 @@ public:
 	int getStrength() const;
 	int getDefense() const;
 
-	void printAll() const;
 private:
 	string name;
 	int health;

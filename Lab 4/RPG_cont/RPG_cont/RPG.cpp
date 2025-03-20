@@ -1,6 +1,7 @@
 #include "RPG.h"
 #include <string>
 #include <iostream>
+#include <cmath>
 using namespace::std;
 
 RPG::RPG() {
@@ -44,21 +45,31 @@ void RPG::setSkills() {
 
 }
 
-/*void RPG::printAction(string, RPG) {
-	printf("%s used %s on %s\n", name.c_str(), skills.c_str(), opponent.getName().c_str());
-}*/
+void RPG::printAction(string skill, RPG opponent) {
+	printf("%s used %s on %s\n", name.c_str(), skill.c_str(), opponent.getName().c_str());
+}
 
 void RPG::updateHealth(int new_health) {
 	health = new_health;
 }
 
-/*void RPG::attack(RPG*) {
+void RPG::attack(RPG* opponent) {
+	int dmg = strength - opponent->defense;
+	int new_health = opponent->health - abs(dmg);
+	(*opponent).updateHealth(new_health);
+}
 
-}*/
-
-/*void RPG::useSkill(RPG*) {
-
-}*/
+void RPG::useSkill(RPG* opponent) {
+	for (int i = 0; i < SKILL_SIZE; i++) {
+		printf("Skill %i: %s\n", i, skills[i].c_str());
+	}
+	int chosen_skill_index;
+	printf("Choose a skill to use: Enter 0 or 1\n");
+	cin >> chosen_skill_index;
+	string chosen_skill = skills[chosen_skill_index];
+	printAction(chosen_skill, *opponent);
+	attack(opponent);
+}
 
 bool RPG::isAlive() const {
 	if (health > 0)
@@ -81,14 +92,4 @@ int RPG::getStrength() const {
 
 int RPG::getDefense() const {
 	return defense;
-}
-
-void RPG::printAll() const {
-	cout << "Name: " << name << endl;
-	cout << "Health: " << health << endl;
-	cout << "Strength: " << strength << endl;
-	cout << "Defense: " << defense << endl;
-	cout << "Type: " << name << endl;
-	cout << "Skill #1: " << skills[0] << endl;
-	cout << "Skill #2: " << skills[1] << endl;
 }
