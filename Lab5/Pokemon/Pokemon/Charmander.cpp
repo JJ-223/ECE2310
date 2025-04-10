@@ -21,7 +21,7 @@ void Charmander::speak(){
 }
 
 void Charmander::printStats() {
-	Pokemon::printState();
+	Pokemon::printStats();
 	cout << "Skills: ";
 	for (int i = 0; i < skills.size(); i++) {
 		cout << skills[i] << "\t";

@@ -8,7 +8,7 @@
 #include "Pokemon.h"
 using namespace std;
 
-class Charmander
+class Charmander : public Pokemon
 {
 public:
 	Charmander();

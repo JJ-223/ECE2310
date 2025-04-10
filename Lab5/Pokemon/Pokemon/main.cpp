@@ -20,6 +20,10 @@ int main() {
 	cout << "\n---------Speak called from Pokemon Pointer----------\n";
 	(*p1).speak();
 
+	Charmander* c1 = &charlie;
+	cout << "\n--------Speak called from Charmander Pointer----------\n";
+	(*c1).speak();
+
 	cout << "\n---------Print Stats----------\n";
 	charlie.printStats();
 }

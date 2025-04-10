@@ -14,7 +14,7 @@ Pokemon::Pokemon(string name, int hp, int att, int def, vector<string> type) {
 	this->hp = hp;
 	attack = att;
 	defense = def;
-	this->type = type;
+	type = type;
 	cout << "Overloaded Constructor (Pokemon)\n";
 }
 
